@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/product_nav"
+    app:startDestination="@id/ingredientsFragment">
+
+    <fragment
+        android:id="@+id/ingredientsFragment"
+        android:name="com.example.abb_additional_hw_1.fragments.IngredientsFragment"
+        android:label="fragment_ingredients"
+        tools:layout="@layout/fragment_ingredients" >
+        <action
+            android:id="@+id/toDiscountFragment"
+            app:destination="@id/paymentFragment"
+            app:popUpTo="@id/ingredientsFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.example.abb_additional_hw_1.fragments.SpecialDiscounts"
+        android:label="fragment_payment"
+        tools:layout="@layout/fragment_special_discounts" />
+</navigation>

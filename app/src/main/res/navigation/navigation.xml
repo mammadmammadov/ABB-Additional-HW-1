@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.abb_additional_hw_1.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/productsFragment"
+        android:name="com.example.abb_additional_hw_1.fragments.ProductsFragment"
+        android:label="fragment_products"
+        tools:layout="@layout/fragment_products" >
+        <action
+            android:id="@+id/toProductNav"
+            app:destination="@id/product_nav"
+            app:popUpTo="@id/productsFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/salesFragment"
+        android:name="com.example.abb_additional_hw_1.fragments.SaleFragment"
+        android:label="fragment_sale"
+        tools:layout="@layout/fragment_sale" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.abb_additional_hw_1.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <include app:graph="@navigation/product_nav" />
+</navigation>
